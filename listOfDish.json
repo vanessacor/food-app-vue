@@ -1,0 +1,30 @@
+{
+  "dishes": [
+    {
+      "title": "Bagel NewYorK",
+      "description ": "fofofdofdf fksfksdjfksjdf kffjd",
+      "category": "breakfast",
+      "quantity": 0,
+      "image": "",
+      "id": 1
+    },
+    {
+      "title": "Bagel NewYorK",
+      "description ": "fofofdofdf fksfksdjfksjdf kffjd",
+      "category": "breakfast",
+      "quantity": 0,
+      "image": "",
+
+      "id": 3
+    },
+    {
+      "title": "Bagel NewYorK",
+      "description ": "fofofdofdf fksfksdjfksjdf kffjd",
+      "category": "breakfast",
+      "quantity": 0,
+      "image": "",
+
+      "id": 2
+    }
+  ]
+}
