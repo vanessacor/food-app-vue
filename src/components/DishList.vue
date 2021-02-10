@@ -1,44 +1,36 @@
 <template>
   <div class="dishList">
-    <h1>List of Dishes</h1>
+    <h1>Food App</h1>
+
+    <ul>
+      <li v-for="dish in dishes" :key="dish.id">
+        {{ dish.name }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-import "../../listOfDish.json";
+import apiService from "../apiclient/apiservice";
 export default {
   name: "DishList",
 
   data() {
     return {
-      dishes: [
-        {
-          id: 1,
-          name: "bagel",
-          description: "ham and cheese",
-          price: 12,
-          quantity: 0,
-          image: "www.nowhere.org",
-        },
-        {
-          id: 2,
-          name: "bagel",
-          description: "ham and cheese",
-          price: 12,
-          quantity: 0,
-          image: "www.nowhere.org",
-        },
-        {
-          id: 3,
-          name: "bagel",
-          description: "ham and cheese",
-          price: 12,
-          quantity: 0,
-          image: "www.nowhere.org",
-        },
-      ],
+      dishes: []
     };
   },
+
+  methods: {
+    async getAllDishes() {
+      const response = await apiService.getAllDishes();
+      this.dishes = response.data;
+    }
+  },
+
+  mounted() {
+    this.getAllDishes();
+  }
 };
 </script>
 

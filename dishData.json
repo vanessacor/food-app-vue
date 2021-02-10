@@ -1,0 +1,28 @@
+{
+  "dishes": [
+    {
+      "id": 1,
+      "name": "bagel",
+      "description": "ham and cheese",
+      "price": 12,
+      "quantity": 0,
+      "image": "https://source.unsplash.com/1FQx2-YtV1A/300x200"
+    },
+    {
+      "id": 2,
+      "name": "bagel",
+      "description": "ham and cheese",
+      "price": 12,
+      "quantity": 0,
+      "image": "https://source.unsplash.com/1FQx2-YtV1A/300x200"
+    },
+    {
+      "id": 3,
+      "name": "bagel",
+      "description": "ham and cheese",
+      "price": 12,
+      "quantity": 0,
+      "image": "https://source.unsplash.com/1FQx2-YtV1A/300x200"
+    }
+  ]
+}
