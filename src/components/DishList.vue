@@ -3,7 +3,7 @@
     <h1>Food App</h1>
 
     <section class="restaurant-menu">
-      <dish-card v-for="dish in dishes" :dish="dish" :key="dish.id" />
+      <dish-card v-for="dish in dishes" :dish="dish" :key="dish.id" @delete:dish="deleteDish"/>
     </section>
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
 
   data() {
     return {
-      dishes: [],
+      dishes: []
     };
   },
 
@@ -27,11 +27,16 @@ export default {
       const response = await apiService.getAllDishes();
       this.dishes = response.data;
     },
+    async deleteDish(id) {
+      const response = await apiService.deleteDish(id);
+      console.log("book deleted", response);
+      this.getAllDishes();
+    }
   },
 
   mounted() {
     this.getAllDishes();
-  },
+  }
 };
 </script>
 

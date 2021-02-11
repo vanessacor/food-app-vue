@@ -8,8 +8,8 @@
       <h4 class="item-title">{{ dish.name }}</h4>
       <p class="item-options">{{ dish.description }}</p>
       <div class="item-picker" id="dish.id">
-        <button class="remove-product">-</button>
-        <p id="quantity">0</p>
+        <button @click="$emit('delete:dish', dish.id)" class="remove-product">-</button>
+        <!-- <p id="quantity">0</p> -->
         <button class="add-product">+</button>
       </div>
     </div>
@@ -20,14 +20,14 @@
 export default {
   name: "DishCard",
   props: {
-    dish: Object,
-  },
+    dish: Object
+  }
+
+
 };
 </script>
 
 <style scoped>
-
-
 .item-card {
   display: grid;
   grid-template-columns: 40% 60%;
