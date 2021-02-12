@@ -9,11 +9,11 @@
       <p class="item-options">{{ dish.description }}</p>
       <div class="item-picker" id="dish.id">
         <button @click="$emit('delete:dish', dish.id)" class="remove-product">
-          -
+          <font-awesome-icon icon="trash-alt" />
         </button>
 
         <button @click="$emit('edit:dish', dish)">
-          Update Dish
+          <font-awesome-icon icon="pen" />
         </button>
       </div>
     </div>
