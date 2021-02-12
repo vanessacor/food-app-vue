@@ -8,9 +8,14 @@
       <h4 class="item-title">{{ dish.name }}</h4>
       <p class="item-options">{{ dish.description }}</p>
       <div class="item-picker" id="dish.id">
-        <button @click="$emit('delete:dish', dish.id)" class="remove-product">-</button>
-        <!-- <p id="quantity">0</p> -->
-        <button class="add-product">+</button>
+        <button @click="$emit('delete:dish', dish.id)" class="remove-product">
+          -
+        </button>
+        
+        <button @click="$emit('edit:dish', dish)">
+          Update Dish
+        </button>
+        
       </div>
     </div>
   </div>
@@ -19,11 +24,14 @@
 <script>
 export default {
   name: "DishCard",
+  data() {
+    return {
+      isFormShowing: false
+    };
+  },
   props: {
     dish: Object
   }
-
-
 };
 </script>
 

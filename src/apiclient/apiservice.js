@@ -7,6 +7,9 @@ class DishesApiService {
   static deleteDish(id) {
     return http.delete(`/dishes/${id}`);
   }
+  static postDish(dish) {
+    return http.post(`/dishes/`, dish);
+  }
 }
 
 export default DishesApiService;
