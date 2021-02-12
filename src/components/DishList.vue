@@ -4,13 +4,13 @@
 
     <section>
       <div v-if="isFormShowing">
-        <Form @createDish="createDish" />
+        <Form :action="createDish" />
       </div>
       <button @click="toggleForm" v-else>New Dish</button>
     </section>
     <section>
-      <div v-if="isFormUpdatingShowing">
-        <Form @updateDish="updateDish" />
+      <div v-if="showUpdateDish">
+        <Form :dishToUpdate="dishToUpdate" :action="updateDish" />
       </div>
     </section>
 
@@ -39,8 +39,8 @@ export default {
     return {
       dishes: [],
       isFormShowing: false,
+      showUpdateDish: false,
       dishToUpdate: {}
-
     };
   },
 
@@ -54,11 +54,15 @@ export default {
       this.getAllDishes();
     },
     async createDish(dish) {
+      console.log(dish);
       await apiService.postDish(dish);
+      this.isFormShowing = false;
       this.getAllDishes();
     },
-     async updateDish(dish) {
+    async updateDish(dish) {
       await apiService.putDish(dish);
+      this.showUpdateDish = false;
+      this.dishToUpdate = {};
       this.getAllDishes();
     },
 
@@ -66,6 +70,8 @@ export default {
       this.isFormShowing = !this.isFormShowing;
     },
     editDish(dish) {
+      console.log(dish.id);
+      this.showUpdateDish = true;
       this.dishToUpdate = dish;
     }
   },

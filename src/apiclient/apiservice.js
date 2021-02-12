@@ -10,6 +10,9 @@ class DishesApiService {
   static postDish(dish) {
     return http.post(`/dishes/`, dish);
   }
+  static putDish(dish) {
+    return http.put(`/dishes/${dish.id}`, dish);
+  }
 }
 
 export default DishesApiService;

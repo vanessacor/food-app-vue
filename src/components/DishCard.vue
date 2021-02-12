@@ -11,11 +11,10 @@
         <button @click="$emit('delete:dish', dish.id)" class="remove-product">
           -
         </button>
-        
+
         <button @click="$emit('edit:dish', dish)">
           Update Dish
         </button>
-        
       </div>
     </div>
   </div>
